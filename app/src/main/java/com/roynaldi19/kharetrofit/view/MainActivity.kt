@@ -1,9 +1,12 @@
-package com.roynaldi19.kharetrofit
+package com.roynaldi19.kharetrofit.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.roynaldi19.kharetrofit.adapter.PostAdapter
 import com.roynaldi19.kharetrofit.databinding.ActivityMainBinding
+import com.roynaldi19.kharetrofit.model.PostResponse
+import com.roynaldi19.kharetrofit.retrofit.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 val responseCode = response.code().toString()
                 binding.tvResponse.text = responseCode
                 response.body()?.let { list.addAll(it) }
+
                 val adapter = PostAdapter(list)
                 binding.rvPost.adapter = adapter
             }

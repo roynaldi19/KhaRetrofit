@@ -1,4 +1,4 @@
-package com.roynaldi19.kharetrofit
+package com.roynaldi19.kharetrofit.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
